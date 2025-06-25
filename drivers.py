@@ -16,6 +16,12 @@ class DriversApp(QtWidgets.QMainWindow):
         self.pushButton_save.clicked.connect(self.save_data)
         self.pushButton_add.clicked.connect(self.add_data)
         
+        self.pushButton_load.setStyleSheet("background-color: #ADD8E6;")
+        self.pushButton_sort.setStyleSheet("background-color: #D8BFD8;")
+        self.pushButton_delete.setStyleSheet("background-color: #ff9999;") 
+        self.pushButton_edit.setStyleSheet("background-color: #ffff99;")   
+        self.pushButton_save.setStyleSheet("background-color: #99ff99;")  
+        self.pushButton_add.setStyleSheet("background-color: #ffcc99;")  
         # Инициализируем список для хранения данных
         self.drivers_data = []
         
