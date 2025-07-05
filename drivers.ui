@@ -21,7 +21,56 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" colspan="6">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButton_delete">
+      <property name="text">
+       <string>Удалить данные</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="pushButton_save">
+      <property name="text">
+       <string>Сохранить изменения</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="pushButton_edit">
+      <property name="text">
+       <string>Изменить данные</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QPushButton" name="pushButton_add">
+      <property name="text">
+       <string>Добавить данные</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton_load">
+      <property name="text">
+       <string>Загрузить данные</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton_sort">
+      <property name="text">
+       <string>Сортировать данные</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6">
+     <widget class="QPushButton" name="pushButton_filter">
+      <property name="text">
+       <string>Фильтр</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="7">
      <widget class="QTableWidget" name="tableWidget">
       <attribute name="horizontalHeaderVisible">
        <bool>true</bool>
@@ -69,48 +118,6 @@
         <string>Госномер</string>
        </property>
       </column>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton_load">
-      <property name="text">
-       <string>Загрузить данные</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton_sort">
-      <property name="text">
-       <string>Сортировать данные</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pushButton_delete">
-      <property name="text">
-       <string>Удалить данные</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="pushButton_edit">
-      <property name="text">
-       <string>Изменить данные</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4">
-     <widget class="QPushButton" name="pushButton_save">
-      <property name="text">
-       <string>Сохранить изменения</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QPushButton" name="pushButton_add">
-      <property name="text">
-       <string>Добавить данные</string>
-      </property>
      </widget>
     </item>
    </layout>
