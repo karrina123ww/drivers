@@ -8,14 +8,13 @@ class DriversApp(QtWidgets.QMainWindow):
         super(DriversApp, self).__init__()
         uic.loadUi('drivers.ui', self)
         
-        # Подключаем кнопки к функциям
         self.pushButton_load.clicked.connect(self.load_data)
         self.pushButton_sort.clicked.connect(self.sort_data)
         self.pushButton_delete.clicked.connect(self.delete_data)
         self.pushButton_edit.clicked.connect(self.edit_data)
         self.pushButton_save.clicked.connect(self.save_data)
         self.pushButton_add.clicked.connect(self.add_data)
-        self.pushButton_filter.clicked.connect(self.filter_data)  # Новая кнопка фильтрации
+        self.pushButton_filter.clicked.connect(self.filter_data)  
         
         self.pushButton_load.setStyleSheet("background-color: #ADD8E6;")
         self.pushButton_sort.setStyleSheet("background-color: #D8BFD8;")
@@ -23,17 +22,16 @@ class DriversApp(QtWidgets.QMainWindow):
         self.pushButton_edit.setStyleSheet("background-color: #ffff99;")   
         self.pushButton_save.setStyleSheet("background-color: #99ff99;")  
         self.pushButton_add.setStyleSheet("background-color: #ffcc99;")
-        self.pushButton_filter.setStyleSheet("background-color: #c2c2f0;")  # Стиль для кнопки фильтрации
+        self.pushButton_filter.setStyleSheet("background-color: #c2c2f0;") 
         
-        # Инициализируем список для хранения данных
         self.drivers_data = []
-        self.filtered_data = None  # Для хранения отфильтрованных данных
+        self.filtered_data = None  
         
     def load_data(self):
         try:
             with open('drivers.txt', 'r', encoding='utf-8') as file:
                 self.drivers_data = [line.strip().split(';') for line in file.readlines()]
-            self.filtered_data = None  # Сбрасываем фильтр при загрузке новых данных
+            self.filtered_data = None  
             self.update_table()
             QMessageBox.information(self, 'Успех', 'Данные успешно загружены!')
         except Exception as e:
@@ -72,7 +70,6 @@ class DriversApp(QtWidgets.QMainWindow):
         
         if reply == QMessageBox.Yes:
             if self.filtered_data is not None:
-                # Удаляем из основного списка, найдя соответствующую запись
                 filtered_item = self.filtered_data[selected_row]
                 for i, item in enumerate(self.drivers_data):
                     if item == filtered_item:
@@ -100,7 +97,6 @@ class DriversApp(QtWidgets.QMainWindow):
                                                f'Введите новое значение для "{items[col]}":', 
                                                QLineEdit.Normal, driver[col])
             if ok and new_value:
-                # Обновляем данные в основном списке, если работаем с отфильтрованными данными
                 if self.filtered_data is not None:
                     for i, item in enumerate(self.drivers_data):
                         if item == driver:
@@ -142,7 +138,7 @@ class DriversApp(QtWidgets.QMainWindow):
             return
         
         self.drivers_data.append([fio, birth_year, car_brand, car_year, license_plate])
-        self.filtered_data = None  # Сбрасываем фильтр при добавлении новых данных
+        self.filtered_data = None  
         self.update_table()
     
     def filter_data(self):
